@@ -91,6 +91,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
+    config.add_index_field 'id', label: 'ID'
     config.add_index_field 'title_display', label: 'Title'
     config.add_index_field 'title_vern_display', label: 'Title'
     config.add_index_field 'author_display', label: 'Author'
@@ -109,6 +110,11 @@ class CatalogController < ApplicationController
     config.add_show_field 'subtitle_vern_display', label: 'Subtitle'
     config.add_show_field 'author_display', label: 'Author'
     config.add_show_field 'author_vern_display', label: 'Author'
+
+    config.add_show_field 'channel_display', label: 'Channel'
+    config.add_show_field 'description_display', label: 'Description'
+    config.add_show_field 'release_date_display', label: 'Release Date'
+
     config.add_show_field 'format', label: 'Format'
     config.add_show_field 'url_fulltext_display', label: 'URL'
     config.add_show_field 'url_suppl_display', label: 'More Information'
@@ -117,6 +123,12 @@ class CatalogController < ApplicationController
     config.add_show_field 'published_vern_display', label: 'Published'
     config.add_show_field 'lc_callnum_display', label: 'Call number'
     config.add_show_field 'isbn_t', label: 'ISBN'
+
+    config.add_show_field 'guid_s', label: 'GUID'
+    config.add_show_field 'keywords_display', label: 'Keyword'
+    config.add_show_field 'subject_topic_facet', label: 'Subject'
+    config.add_show_field 'thumbnail_display', label: 'Thumbnail'
+    config.add_show_field 'copyright_display', label: 'Rights'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields

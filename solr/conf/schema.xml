@@ -466,7 +466,8 @@
    
    <!-- these display fields are NOT multi-valued -->
    <field name="marc_display" type="string" indexed="false" stored="true" multiValued="false"/>
-   <field name="title_display" type="string" indexed="false" stored="true" multiValued="false"/>
+   <field name="title_display" type="string" indexed="true" stored="true" multiValued="false"/>
+   <field name="owner" type="text" indexed="true" stored="true" multiValued="false"/>
    <field name="title_vern_display" type="string" indexed="false" stored="true" multiValued="false"/>
    <field name="subtitle_display" type="string" indexed="false" stored="true" multiValued="false"/>
    <field name="subtitle_vern_display" type="string" indexed="false" stored="true" multiValued="false"/>
@@ -487,7 +488,6 @@
      
    <!-- format is used for facet, display, and choosing which partial to use for the show view, so it must be stored and indexed -->
    <field name="format" type="string" indexed="true" stored="true"/>
-
    
 
    <!-- Dynamic field definitions.  If a field name is not found, dynamicFields

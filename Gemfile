@@ -52,6 +52,7 @@ gem 'blacklight', '~> 6.7'
 
 group :development, :test do
   gem 'solr_wrapper', '>= 0.3'
+  gem 'pry-rails'
 end
 
 gem 'rsolr', '~> 1.0'
