@@ -6,7 +6,7 @@ require 'securerandom'
 require 'ruby-progressbar'
 
 def harvest_rss (rss_source)
-  open(rss_file) do |rss|
+  open(rss_source) do |rss|
     feed = RSS::Parser.parse(rss_source)
     puts "Harvesting: #{feed.channel.title}"
     progressbar = ProgressBar.create(:title => "Item", :total => feed.items.size, format: "%t (%c/%C) %a |%B|")
