@@ -67,6 +67,7 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
+    config.add_facet_field 'channel_facet', label: 'Channel'
     config.add_facet_field 'format', label: 'Format'
     config.add_facet_field 'pub_date', label: 'Publication Year', single: true
     config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
@@ -111,7 +112,7 @@ class CatalogController < ApplicationController
     config.add_show_field 'author_display', label: 'Author'
     config.add_show_field 'author_vern_display', label: 'Author'
 
-    config.add_show_field 'channel_display', label: 'Channel'
+    config.add_show_field 'channel_facet', label: 'Channel'
     config.add_show_field 'description_display', label: 'Description'
     config.add_show_field 'release_date_display', label: 'Release Date'
 
