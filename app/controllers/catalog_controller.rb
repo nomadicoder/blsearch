@@ -36,7 +36,7 @@ class CatalogController < ApplicationController
     #}
 
     # solr field configuration for search results/index views
-    config.index.title_field = 'title_display'
+    config.index.event_title_field = 'event_title_display'
     config.index.display_type_field = 'format'
 
     # solr field configuration for document/show views
@@ -142,17 +142,17 @@ class CatalogController < ApplicationController
     # case for a BL "search field", which is really a dismax aggregate
     # of Solr search fields.
 
-    config.add_search_field('title') do |field|
+    config.add_search_field('event_title') do |field|
       # solr_parameters hash are sent to Solr as ordinary url query params.
-      field.solr_parameters = { :'spellcheck.dictionary' => 'title' }
+      field.solr_parameters = { :'spellcheck.dictionary' => 'event_title' }
 
       # :solr_local_parameters will be sent using Solr LocalParams
-      # syntax, as eg {! qf=$title_qf }. This is neccesary to use
-      # Solr parameter de-referencing like $title_qf.
+      # syntax, as eg {! qf=$event_title_qf }. This is neccesary to use
+      # Solr parameter de-referencing like $event_title_qf.
       # See: http://wiki.apache.org/solr/LocalParams
       field.solr_local_parameters = {
-        qf: '$title_qf',
-        pf: '$title_pf'
+        qf: '$event_title_qf',
+        pf: '$event_title_pf'
       }
     end
 
@@ -180,10 +180,10 @@ class CatalogController < ApplicationController
     # label in pulldown is followed by the name of the SOLR field to sort by and
     # whether the sort is ascending or descending (it must be asc or desc
     # except in the relevancy case).
-    config.add_sort_field 'score desc, pub_date_sort desc, title_sort asc', label: 'relevance'
-    config.add_sort_field 'pub_date_sort desc, title_sort asc', label: 'year'
-    config.add_sort_field 'author_sort asc, title_sort asc', label: 'author'
-    config.add_sort_field 'title_sort asc, pub_date_sort desc', label: 'title'
+    config.add_sort_field 'score desc, pub_date_sort desc, event_title_sort asc', label: 'relevance'
+    config.add_sort_field 'pub_date_sort desc, event_title_sort asc', label: 'year'
+    config.add_sort_field 'author_sort asc, event_title_sort asc', label: 'author'
+    config.add_sort_field 'event_title_sort asc, pub_date_sort desc', label: 'event_title'
 
     # If there are more than this many search results, no spelling ("did you
     # mean") suggestion is offered.

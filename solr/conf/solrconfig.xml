@@ -339,9 +339,9 @@
       <str name="buildOnOptimize">true</str>
     </lst>
     <lst name="spellchecker">
-      <str name="name">title</str>
-      <str name="field">title_spell</str>
-      <str name="spellcheckIndexDir">./spell_title</str>
+      <str name="name">event_title</str>
+      <str name="field">event_title_spell</str>
+      <str name="spellcheckIndexDir">./spell_event_title</str>
       <str name="accuracy">0.7</str>
       <str name="buildOnOptimize">true</str>
     </lst>
