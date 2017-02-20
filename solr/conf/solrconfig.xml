@@ -94,6 +94,7 @@
          title_series_unstem_search^25
          title_series_t^10
          isbn_t
+         description_t
          text
        </str>
        <str name="pf">
@@ -103,6 +104,7 @@
          game_system_facet^5000
          gm_name_s_unstem_search^2500
          gm_name_s_t^1000
+         description_t
          text^10
        </str>
        <str name="gm_name_s_qf">
