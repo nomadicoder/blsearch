@@ -36,7 +36,7 @@ class CatalogController < ApplicationController
     #}
 
     # solr field configuration for search results/index views
-    config.index.event_title_field = 'event_title_display'
+    config.index.title_field = 'event_title_display'
     config.index.display_type_field = 'format'
 
     # solr field configuration for document/show views
@@ -81,7 +81,7 @@ class CatalogController < ApplicationController
 
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
-    config.add_index_field 'id', label: 'ID'
+    config.add_index_field 'id', label: 'Game ID'
     config.add_index_field 'event_title_display', label: 'Event Title'
 
     # solr fields to be displayed in the show (single result) view
