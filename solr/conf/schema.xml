@@ -468,9 +468,6 @@
    <field name="marc_display" type="string" indexed="false" stored="true" multiValued="false"/>
    <field name="title_display" type="string" indexed="true" stored="true" multiValued="false"/>
    <field name="owner" type="text" indexed="true" stored="true" multiValued="false"/>
-   <field name="title_vern_display" type="string" indexed="false" stored="true" multiValued="false"/>
-   <field name="subtitle_display" type="string" indexed="false" stored="true" multiValued="false"/>
-   <field name="subtitle_vern_display" type="string" indexed="false" stored="true" multiValued="false"/>
    <field name="author_display" type="string" indexed="false" stored="true" multiValued="false"/>
    <field name="author_vern_display" type="string" indexed="false" stored="true" multiValued="false"/>
    
@@ -557,10 +554,6 @@
         
    <!-- unstemmed fields -->
    <copyField source="title_t" dest="title_unstem_search"/>
-   <copyField source="subtitle_t" dest="subtitle_unstem_search"/>
-   <copyField source="title_addl_t" dest="title_addl_unstem_search"/>
-   <copyField source="title_added_entry_t" dest="title_added_entry_unstem_search"/>
-   <copyField source="title_series_t" dest="title_series_unstem_search"/>
    <copyField source="author_t" dest="author_unstem_search"/>
    <copyField source="author_addl_t" dest="author_addl_unstem_search"/>
    <copyField source="subject_t" dest="subject_unstem_search"/>
@@ -578,10 +571,6 @@
    <copyField source="*_facet" dest="spell"/>
    <!-- title spell check;  should match fields for title request handler -->
    <copyField source="title_t" dest="title_spell"/>
-   <copyField source="subtitle_t" dest="title_spell"/>
-   <copyField source="addl_titles_t" dest="title_spell"/>
-   <copyField source="title_added_entry_t" dest="title_spell"/>
-   <copyField source="title_series_t" dest="title_spell"/>
    <!-- author spell check; should match fields for author request handler -->
    <copyField source="author_t" dest="author_spell"/>
    <copyField source="author_addl_t" dest="author_spell"/>
@@ -592,10 +581,6 @@
    
    <!-- OpenSearch query field should match request handler search fields -->
    <copyField source="title_t" dest="opensearch_display"/>
-   <copyField source="subtitle_t" dest="opensearch_display"/>
-   <copyField source="addl_titles_t" dest="opensearch_display"/>
-   <copyField source="title_added_entry_t" dest="opensearch_display"/>
-   <copyField source="title_series_t" dest="opensearch_display"/>
    <copyField source="author_t" dest="opensearch_display"/>
    <copyField source="author_addl_t" dest="opensearch_display"/>
    <copyField source="subject_topic_facet" dest="opensearch_display"/>

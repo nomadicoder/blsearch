@@ -67,22 +67,11 @@ class CatalogController < ApplicationController
     #  (useful when user clicks "more" on a large facet and wants to navigate alphabetically across a large set of results)
     # :index_range can be an array or range of prefixes that will be used to create the navigation (note: It is case sensitive when searching values)
 
-    config.add_facet_field 'channel_facet', label: 'Channel'
-    config.add_facet_field 'format', label: 'Format'
-    config.add_facet_field 'pub_date', label: 'Publication Year', single: true
-    config.add_facet_field 'subject_topic_facet', label: 'Topic', limit: 20, index_range: 'A'..'Z'
-    config.add_facet_field 'language_facet', label: 'Language', limit: true
-    config.add_facet_field 'lc_1letter_facet', label: 'Call Number'
-    config.add_facet_field 'subject_geo_facet', label: 'Region'
-    config.add_facet_field 'subject_era_facet', label: 'Era'
-
-    config.add_facet_field 'example_pivot_field', label: 'Pivot Field', :pivot => ['format', 'language_facet']
-
-    config.add_facet_field 'example_query_facet_field', label: 'Publish Date', :query => {
-       :years_5 => { label: 'within 5 Years', fq: "pub_date:[#{Time.zone.now.year - 5 } TO *]" },
-       :years_10 => { label: 'within 10 Years', fq: "pub_date:[#{Time.zone.now.year - 10 } TO *]" },
-       :years_25 => { label: 'within 25 Years', fq: "pub_date:[#{Time.zone.now.year - 25 } TO *]" }
-    }
+    config.add_facet_field 'caming_group_company_facet', label: 'Caming Group Company'
+    config.add_facet_field 'event_type_facet', label: 'Event Type'
+    config.add_facet_field 'game_system_facet', label: 'Game System'
+    config.add_facet_field 'experience_required_facet', label: 'Experience Required'
+    config.add_facet_field 'location_facet', label: 'Location'
 
 
     # Have BL send all facet field names to Solr, which has been the default
@@ -93,43 +82,40 @@ class CatalogController < ApplicationController
     # solr fields to be displayed in the index (search results) view
     #   The ordering of the field names is the order of the display
     config.add_index_field 'id', label: 'ID'
-    config.add_index_field 'title_display', label: 'Title'
-    config.add_index_field 'title_vern_display', label: 'Title'
-    config.add_index_field 'author_display', label: 'Author'
-    config.add_index_field 'author_vern_display', label: 'Author'
-    config.add_index_field 'format', label: 'Format'
-    config.add_index_field 'language_facet', label: 'Language'
-    config.add_index_field 'published_display', label: 'Published'
-    config.add_index_field 'published_vern_display', label: 'Published'
-    config.add_index_field 'lc_callnum_display', label: 'Call number'
+    config.add_index_field 'event_title_display', label: 'Event Title'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
-    config.add_show_field 'title_display', label: 'Title'
-    config.add_show_field 'title_vern_display', label: 'Title'
-    config.add_show_field 'subtitle_display', label: 'Subtitle'
-    config.add_show_field 'subtitle_vern_display', label: 'Subtitle'
-    config.add_show_field 'author_display', label: 'Author'
-    config.add_show_field 'author_vern_display', label: 'Author'
-
-    config.add_show_field 'channel_facet', label: 'Channel'
+    config.add_show_field 'game_id_display', label: 'Game'
+    config.add_show_field 'caming_group_company_display', label: 'Caming Group Company'
+    config.add_show_field 'event_title_display', label: 'Event Title'
     config.add_show_field 'description_display', label: 'Description'
-    config.add_show_field 'release_date_display', label: 'Release Date'
-
-    config.add_show_field 'format', label: 'Format'
-    config.add_show_field 'url_fulltext_display', label: 'URL'
-    config.add_show_field 'url_suppl_display', label: 'More Information'
-    config.add_show_field 'language_facet', label: 'Language'
-    config.add_show_field 'published_display', label: 'Published'
-    config.add_show_field 'published_vern_display', label: 'Published'
-    config.add_show_field 'lc_callnum_display', label: 'Call number'
-    config.add_show_field 'isbn_t', label: 'ISBN'
-
-    config.add_show_field 'guid_s', label: 'GUID'
-    config.add_show_field 'keywords_display', label: 'Keyword'
-    config.add_show_field 'subject_topic_facet', label: 'Subject'
-    config.add_show_field 'thumbnail_display', label: 'Thumbnail'
-    config.add_show_field 'copyright_display', label: 'Rights'
+    config.add_show_field 'event_type_display', label: 'Event Type'
+    config.add_show_field 'game_system_display', label: 'Game System'
+    config.add_show_field 'rules_edition_display', label: 'Rules Edition'
+    config.add_show_field 'minimum_players_display', label: 'Minimum Players'
+    config.add_show_field 'maximum_players_display', label: 'Maximum Players'
+    config.add_show_field 'age_required_display', label: 'Age Required'
+    config.add_show_field 'experience_required_display', label: 'Experience Required'
+    config.add_show_field 'materials_provided_display', label: 'Materials Provided'
+    config.add_show_field 'start_date_display', label: 'Start Date'
+    config.add_show_field 'duration_display', label: 'Duration'
+    config.add_show_field 'end_date_display', label: 'End Date'
+    config.add_show_field 'gm_name_s_display', label: 'Gm Name S'
+    config.add_show_field 'web_address_for_more_info_display', label: 'Web Address For More Info'
+    config.add_show_field 'email_for_more_info_display', label: 'Email For More Info'
+    config.add_show_field 'tournament_display', label: 'Tournament'
+    config.add_show_field 'round_number_display', label: 'Round Number'
+    config.add_show_field 'total_rounds_display', label: 'Total Rounds'
+    config.add_show_field 'minimum_play_time_display', label: 'Minimum Play Time'
+    config.add_show_field 'can_attendees_register_for_this_event_display', label: 'Can Attendees Register For This Event'
+    config.add_show_field 'event_cost_display', label: 'Event Cost'
+    config.add_show_field 'location_display', label: 'Location'
+    config.add_show_field 'room_name_display', label: 'Room Name'
+    config.add_show_field 'table_number_display', label: 'Table Number'
+    config.add_show_field 'special_category_display', label: 'Special Category'
+    config.add_show_field 'tickets_available_display', label: 'Tickets Available'
+    config.add_show_field 'last_modified_display', label: 'Last Modified'
 
     # "fielded" search configuration. Used by pulldown among other places.
     # For supported keys in hash, see rdoc for Blacklight::SearchFields
