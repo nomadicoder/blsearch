@@ -83,6 +83,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field 'id', label: 'Game ID'
     config.add_index_field 'event_title_display', label: 'Event Title'
+    config.add_index_field 'game_system_display', label: 'Game System'
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -122,7 +123,7 @@ class CatalogController < ApplicationController
     #
     # Search fields will inherit the :qt solr request handler from
     # config[:default_solr_parameters], OR can specify a different one
-    # with a :qt key/value. Below examples inherit, except for subject
+    # with a :qt key/value. Below examples inherit, except for game_system
     # that specifies the same :qt as default for our own internal
     # testing purposes.
     #
@@ -167,12 +168,12 @@ class CatalogController < ApplicationController
     # Specifying a :qt only to show it's possible, and so our internal automated
     # tests can test it. In this case it's the same as
     # config[:default_solr_parameters][:qt], so isn't actually neccesary.
-    config.add_search_field('subject') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'subject' }
+    config.add_search_field('game_system') do |field|
+      field.solr_parameters = { :'spellcheck.dictionary' => 'game_system' }
       field.qt = 'search'
       field.solr_local_parameters = {
-        qf: '$subject_qf',
-        pf: '$subject_pf'
+        qf: '$game_system_qf',
+        pf: '$game_system_pf'
       }
     end
 
