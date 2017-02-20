@@ -83,6 +83,7 @@ class CatalogController < ApplicationController
     #   The ordering of the field names is the order of the display
     config.add_index_field 'id', label: 'Game ID'
     config.add_index_field 'event_title_display', label: 'Event Title'
+    config.add_index_field 'gm_name_s_display', label: 'GM Name'
     config.add_index_field 'game_system_display', label: 'Game System'
 
     # solr fields to be displayed in the show (single result) view
