@@ -85,14 +85,8 @@
        -->
 
        <str name="qf">
-         title_unstem_search^100000
-         subtitle_unstem_search^50000
-         title_t^25000
-         subtitle_t^10000
-         title_addl_unstem_search^5000
-         title_addl_t^2500
-         title_added_entry_unstem_search^1500
-         title_added_entry_t^1250
+         event_title_unstem_search^100000
+         event_title_t^25000
          subject_topic_unstem_search^1000
          subject_unstem_search^750
          subject_topic_facet^625
@@ -109,14 +103,8 @@
          text
        </str>
        <str name="pf">
-         title_unstem_search^1000000
-         subtitle_unstem_search^500000
-         title_t^250000
-         subtitle_t^100000
-         title_addl_unstem_search^50000
-         title_addl_t^25000
-         title_added_entry_unstem_search^15000
-         title_added_entry_t^12500
+         event_title_unstem_search^1000000
+         event_title_t^250000
          subject_topic_unstem_search^10000
          subject_unstem_search^7500
          subject_topic_facet^6250
@@ -127,8 +115,6 @@
          author_addl_t^500
          subject_addl_unstem_search^2500
          subject_addl_t^500
-         title_series_unstem_search^250
-         title_series_t^100
          text^10
        </str>
        <str name="author_qf">
@@ -143,29 +129,13 @@
          author_t^200
          author_addl_t^10
        </str>
-       <str name="title_qf">
-         title_unstem_search^50000
-         subtitle_unstem_search^25000
-         title_addl_unstem_search^10000
-         title_t^5000
-         subtitle_t^2500
-         title_addl_t^100
-         title_added_entry_unstem_search^50
-         title_added_entry_t^10
-         title_series_unstem_search^5
-         title_series_t
+       <str name="event_title_qf">
+         event_title_unstem_search^50000
+         event_title_t^5000
        </str>
-       <str name="title_pf">
-         title_unstem_search^500000
-         subtitle_unstem_search^250000
-         title_addl_unstem_search^100000
-         title_t^50000
-         subtitle_t^25000
-         title_addl_t^1000
-         title_added_entry_unstem_search^500
-         title_added_entry_t^100
-         title_series_t^50
-         title_series_unstem_search^10
+       <str name="event_title_pf">
+         event_title_unstem_search^500000
+         event_title_t^50000
        </str>
        <str name="subject_qf">
          subject_topic_unstem_search^200
