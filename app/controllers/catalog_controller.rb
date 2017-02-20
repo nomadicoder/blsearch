@@ -156,11 +156,11 @@ class CatalogController < ApplicationController
       }
     end
 
-    config.add_search_field('author') do |field|
-      field.solr_parameters = { :'spellcheck.dictionary' => 'author' }
+    config.add_search_field('gm_name_s') do |field|
+      field.solr_parameters = { :'spellcheck.dictionary' => 'gm_name_s' }
       field.solr_local_parameters = {
-        qf: '$author_qf',
-        pf: '$author_pf'
+        qf: '$gm_name_s_qf',
+        pf: '$gm_name_s_pf'
       }
     end
 
