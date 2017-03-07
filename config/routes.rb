@@ -22,6 +22,8 @@ Rails.application.routes.draw do
       delete 'clear'
     end
   end
-
+  
+  mount Blimp::Engine => "/blimp"
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
