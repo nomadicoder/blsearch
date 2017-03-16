@@ -9,9 +9,9 @@ GIT
 
 GIT
   remote: https://github.com/tulibraries/harvest_csv.git
-  revision: e8c456c86d2d9f7c017d0ce1623e9fb1d3a852fb
+  revision: 7c64cf0f7113d41433db28b75563b4b2a921c20c
   specs:
-    harvest_csv (0.0.2)
+    harvest_csv (0.0.3)
       activesupport (~> 5.0)
       rsolr (~> 1.0)
       ruby-progressbar (~> 1.8)
